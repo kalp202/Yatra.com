@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yatra.com</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="./photos/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <!-- Register-box -->
+  <div id="registerContainer">
+    <div class="registerbox">
+      <img src="./photos/Untitled.png " alt="">
+      <div class="registerform">
+        <span id="close-reg">&times;</span>
+        <h3>Create your account</h3>
+        <form action="">
+          <i class="fas fa-user"></i>
+          <label for="name" class="clickable">Name</label>
+          <input type="text" name="name" id="name"> <br>
+          <i class="fas fa-phone"></i>
+          <label for="number" class="clickable">Mobile No.</label>
+          <input type="text" name="number" id="number"> <br>
+          <i class="fas fa-envelope"></i>
+          <label for="email" class="clickable">E-mail Id</label>
+          <input type="email" name="email" id="email"><br>
+          <i class="fas fa-unlock"></i>
+          <label for="password" class="clickable">Password</label>
+          <input type="password" id="password">
+          <div class="privacy">
+            <input type="checkbox" name="policy" id="policy" required>
+            <label for="policy" id="policy-label">I understand and agree to all privacy policy.</label>
+          </div>
+        </form>
+        <button>Register</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- loginbox -->
+  <div id="loginContainer">
+    <div class="loginbox">
+      <img src="./photos/Untitled.png" alt="">
+      <div class="loginform">
+        <span id="close-login">&times;</span>
+        <h3>Log in to Yatra.com</h3>
+        <form action="">
+          <i class="fas fa-phone"></i>
+          <label for="number" class="clickable">Mobile No.</label>
+          <input type="text" name="number" id="number"> <br>
+          <i class="fas fa-envelope"></i>
+          <label for="email" class="clickable">E-mail Id</label>
+          <input type="email" name="email" id="email"><br>
+          <i class="fas fa-unlock"></i>
+          <label for="password" class="clickable">Password</label>
+          <input type="password" id="password">
+          <a href="">Forgot password?</a>
+        </form>
+        <button>Login</button>
+        <div class="register-option">
+          <p>Don't have an account? </p>
+          <a href="#registerContainer" id="register-alt">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- navbar -->
+  <nav>
+    <div class="left">
+      <img src="./photos/logo2.png" alt="" width="90px" height="80px" />
+    </div>
+    <div class="middle">
+      <!-- <p>Welcome to Yatra.com</p> -->
+      <a href="#page1">Home</a>
+      <a href="">About us</a>
+      <a href="#footer">Contact</a>
+    </div>
+    <div class="right">
+      <img src="./photos/user.png" alt="" width="30px" height="30px" />
+      <h3 class="login">Login</h3>
+      <h3>|</h3>
+      <h3 class="register">Register</h3>
+    </div>
+  </nav>
+
+  <div id="page1">
+    <div class="option">
+      <span>Book Trains</span>
+      <span>Check PNR Status</span>
+      <span>Check Running Status</span>
+      <span>Search Train</span>
+    </div>
+    <div class="booking">
+      <div class="journey">
+        <div class="from">
+          <label for="from"> From</label>
+          <input type="text" name="from" id="from" placeholder="Leaving from">
+        </div>
+        <div class="arrow">
+          <i class="fa fa-circle-thin" id="circle"></i>
+          <i class="fa fa-exchange" id="exchange"></i>
+        </div>
+        <div class="to">
+          <label for="to">To</label>
+          <input type="text" name="to" id="to" placeholder="Going to">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <p>Contact will be here</p>
+  </footer>
+
+  </div>
+</body>
+
+<script src="/script.js"></script>
+
+</html>
