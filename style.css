@@ -256,7 +256,7 @@ nav {
 
 .option {
     position: relative;
-    top: 50%;
+    top: 40%;
     width: 100%;
     background: transparent;
     color: #faf7f7;
@@ -268,33 +268,101 @@ nav {
 
 .booking {
     position: relative;
-    top: 55%;
-    height: 20%;
+    top: 45%;
+    height: 30%;
     width: 100%;
     display: flex;
     border: 1px solid #e9f0f0;
     border-radius: 5px;
     justify-content: flex-start;
-    /* align-items: center; */
+    align-items: center;
+    flex-direction: column;
     background-color: #e9f0f0;
     padding-left: 30px;
 }
 
 .journey {
     height: 70%;
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    mix-blend-mode: multiply;
+    padding: 0 90px 0 0;
 }
 
-.from {
+.from input,
+.to input {
+    border: none;
+    border-bottom: 1px solid #2e2c2b;
+    height: 18px;
+    width: 200px;
+    outline: none;
+}
+
+.from label,
+.to label {
+    font-size: 14px;
+}
+
+.search-train {
+    margin-left: 50px;
+    font-size: 20px;
+    height: 40px;
+    width: 170px;
+    color: #ffffff;
+    background-color: #ed5b25;
+    border: 1px solid #ED5B25;
+    border-radius: 5px;
+    transition: all 0.2s ease-in 0.05s;
+}
+
+.search-train:hover {
+    transform: scale(1.1);
+}
+
+.opt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 35%;
+    width: 70%;
+    background-color: rgb(223, 123, 87, 0.4);
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#free-cancel {
+    height: 20px;
+    width: 20px;
+}
+
+.free-cancel-text {
+    font-size: 18px;
     display: inline;
-    column-gap: 5px;
+    margin-left: 10px;
 }
 
-.to {}
+.details {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.details p {
+    color: #676363;
+    font-weight: 100;
+}
 
 #exchange {
     position: relative;
