@@ -85,15 +85,3 @@ document.addEventListener("click", (event) => {
         check.style.display = "none";
     }
 });
-
-
-
-// let options=document.querySelectorAll(".option");
-// options.forEach((option)=>{
-//     option.addEventListener("click",()=>{
-//         if(option){
-//             option.style.borderBottom="3px solid #ED5B25";
-
-//         }
-//     })
-// })
