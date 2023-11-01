@@ -48,6 +48,11 @@ nav {
     border-radius: 5%;
 }
 
+.right i{
+    color: #ED5B25;
+    font-size: 30px;
+}
+
 .login {
     width: 65px;
     cursor: pointer;
@@ -222,7 +227,7 @@ nav {
 }
 
 .registerform form input:active{
-    border-color: #ED5B25;
+    border-color: #ed5b25;
 }
 
 .registerform button:hover,
@@ -243,7 +248,7 @@ nav {
 #page1 {
     height: 100vh;
     width: 100vw;
-    background-image: url(./photos/bac.jpeg);
+    background-image: url(./photos/background1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
