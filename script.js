@@ -6,48 +6,94 @@ labels.forEach((label) => {
         label.style.color = "#ED5B25";
         label.style.fontSize = "16px";
     });
-})
-
+});
 
 // registerBox
 let register = document.querySelector(".register");
 register.addEventListener("click", () => {
     registerContainer.style.display = "flex";
     registerContainer.style.display.justifyContent = "center";
-    registerContainer.style.display.alignItems = 'center';
-})
+    registerContainer.style.display.alignItems = "center";
+});
 
 let register1 = document.querySelector("#register-alt");
 register1.addEventListener("click", () => {
     registerContainer.style.display = "flex";
     registerContainer.style.display.justifyContent = "center";
-    registerContainer.style.display.alignItems = 'center';
-})
+    registerContainer.style.display.alignItems = "center";
+});
 
 const registerContainer = document.getElementById("registerContainer");
 const registerAlt = document.getElementById("register-alt");
 
 // to disapper register-box
-const close_reg=document.getElementById("close-reg");
-close_reg.addEventListener("click",()=>{
+const close_reg = document.getElementById("close-reg");
+close_reg.addEventListener("click", () => {
     registerContainer.style.display = "none";
-})
+});
 
 //to pop-up login box
 let login = document.querySelector(".login");
 login.addEventListener("click", () => {
     loginContainer.style.display = "flex";
     loginContainer.style.display.justifyContent = "center";
-    loginContainer.style.display.alignItems = 'center';
-})
+    loginContainer.style.display.alignItems = "center";
+});
 
 //to diappear login-box
-const close_login=document.getElementById("close-login");
-close_login.addEventListener("click",()=>{
+const close_login = document.getElementById("close-login");
+close_login.addEventListener("click", () => {
     loginContainer.style.display = "none";
-    console.log("closed");
-})
+});
 
-registerAlt.addEventListener("click",()=>{
+registerAlt.addEventListener("click", () => {
     loginContainer.style.display = "none";
-})
+});
+
+//Book-trains
+const book_train = document.querySelector(".opt_1");
+const booking = document.querySelector(".booking");
+
+book_train.addEventListener("click", () => {
+    if (booking) {
+        book_train.style.borderBottom = "3px solid #ED5B25";
+        booking.style.display = "flex";
+    }
+});
+
+document.addEventListener("click", (event) => {
+    if (event.target !== book_train && !booking.contains(event.target)) {
+        book_train.style.borderBottom = "none";
+        booking.style.display = "none";
+    }
+});
+
+
+//PNR status
+const pnr_status = document.querySelector(".opt_2");
+const check = document.querySelector(".pnr_status");
+pnr_status.addEventListener("click", () => {
+    if (check) {
+        pnr_status.style.borderBottom = "3px solid #ED5B25";
+        check.style.display = "flex";
+    }
+});
+
+document.addEventListener("click", (event) => {
+    if (event.target !== pnr_status && !check.contains(event.target)) {
+        pnr_status.style.borderBottom = "none";
+        check.style.display = "none";
+    }
+});
+
+
+
+// let options=document.querySelectorAll(".option");
+// options.forEach((option)=>{
+//     option.addEventListener("click",()=>{
+//         if(option){
+//             option.style.borderBottom="3px solid #ED5B25";
+
+//         }
+//     })
+// })

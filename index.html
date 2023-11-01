@@ -90,11 +90,11 @@
   </nav>
 
   <div id="page1">
-    <div class="option">
-      <span>Book Trains</span>
-      <span>Check PNR Status</span>
-      <span>Check Running Status</span>
-      <span>Search Train</span>
+    <div id="option">
+      <span class="opt_1">Book Trains</span>
+      <span class="opt_2">Check PNR Status</span>
+      <span class="opt_3">Check Running Status</span>
+      <span class="opt_4">Search Train</span>
     </div>
 
     <!-- book trains -->
@@ -131,6 +131,20 @@
         </div>
       </div>
     </div>
+
+    <!-- PNR status -->
+    <div class="pnr_status">
+      <div class="pnr_info">
+        <img src="./photos/pnr.png" alt="">
+        <p>Know your current ststus of your train ticket.</p>
+      </div>
+      <div class="pnr_no">
+        <label for="no">PNR number</label><br><br>
+        <input type="text" name="no" id="no" placeholder="Enter PNR number">
+      </div>
+      <button class="pnr_search">Search</button>
+    </div>
+
   </div>
 
   <footer id="footer">
