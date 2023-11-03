@@ -82,10 +82,23 @@
       <a href="#footer">Contact</a>
     </div>
     <div class="right">
-      <i class='fas fa-user-circle'></i>
-      <h3 class="login">Login</h3>
-      <h3>|</h3>
-      <h3 class="register">Register</h3>
+      <div class="dropdown">
+        <i class="fas fa-user-circle" id="profileicon"></i>
+        <div class="dropdown_content">
+          <span class="profile">Profile</span>
+          <span class="login">Login</span>
+          <span class="register">Register</span>
+          <span class="paymenthistory">Payment History</span>
+          <div class="darkmode">
+            <span class="dark">Dark mode</span>
+            <label class="toggle">
+              <input type="checkbox" id="switch" class="checkbox" />
+              <span class="togglebtn"></span>
+            </label>
+          </div>
+          <span class="logout">Log Out</span>
+        </div>
+      </div>
     </div>
   </nav>
 

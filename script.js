@@ -36,8 +36,6 @@ close_reg.addEventListener("click", () => {
 let login = document.querySelector(".login");
 login.addEventListener("click", () => {
     loginContainer.style.display = "flex";
-    loginContainer.style.display.justifyContent = "center";
-    loginContainer.style.display.alignItems = "center";
 });
 
 //to diappear login-box
