@@ -83,3 +83,37 @@ document.addEventListener("click", (event) => {
         check.style.display = "none";
     }
 });
+
+//Running status
+const run_status = document.querySelector(".opt_3")
+const check2 = document.querySelector(".running_status")
+run_status.addEventListener("click", () => {
+    if (check2) {
+        run_status.style.borderBottom = "3px solid #ED5B25";
+        check2.style.display = "flex";
+    }
+});
+
+document.addEventListener("click", (event) => {
+    if (event.target !== run_status && !check2.contains(event.target)) {
+        run_status.style.borderBottom = "none";
+        check2.style.display = "none";
+    }
+})
+
+//Train details
+const train_detail = document.querySelector(".opt_4")
+const check3 = document.querySelector(".train_details")
+train_detail.addEventListener("click", () => {
+    if (check3) {
+        train_detail.style.borderBottom = "3px solid #ED5B25";
+        check3.style.display = "flex";
+    }
+});
+
+document.addEventListener("click", (event) => {
+    if (event.target !== train_detail && !check3.contains(event.target)) {
+        train_detail.style.borderBottom = "none";
+        check3.style.display = "none";
+    }
+})

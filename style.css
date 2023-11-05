@@ -5,30 +5,30 @@
 }
 
 nav {
-    height: 110px;
+    height: 80px;
     width: 100%;
     background-color: #faf7f7;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: relative; /* Add position relative */
+    position: relative;
 }
 
 .left {
-    padding-left: 20px; /* Adjust the padding */
+    padding-left: 20px;
 }
 
 .left img {
     border-radius: 5%;
-    max-width: 100%; /* Ensure the image doesn't exceed the container */
+    max-width: 100%;
 }
 
 .middle {
-    width: 50%; /* Adjust the width */
+    width: 50%;
     display: flex;
     justify-content: space-around;
     font-size: 20px;
-    font-family: 'IBM Plex Serif', serif; /* You can specify multiple fonts separated by a comma */
+    font-family: 'IBM Plex Serif', serif;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Poppins', sans-serif;
 }
@@ -40,15 +40,15 @@ nav {
 
 .right {
     display: flex;
-    align-items: center; /* Vertically center the content */
+    align-items: center;
     position: relative;
 }
 
 #profileicon {
     color: #ED5B25;
-    font-size: 30px;
-    cursor: pointer; /* Add pointer cursor for better UX */
-    margin-right: 10px; /* Create some spacing */
+    font-size: 40px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .dropdown {
@@ -83,7 +83,8 @@ nav {
 }
 
 .dropdown_content span:hover {
-    color: #ED5B25;
+    background-color: #ED5B25;
+    color: #e9f0f0;
 }
 
 .darkmode span {
@@ -100,19 +101,15 @@ nav {
     margin-left: 10px;
 }
 
-.darkmode:hover{
-    color: #ED5B25;
+.darkmode:hover {
+    background-color: #ED5B25;
+    color: #e9f0f0;
 }
-
 
 .togglebtn {
     margin-left: 40px;
     padding-top: 20px;
 }
-
-/* .darkmode span:hover {
-    background-color: transparent;
-} */
 
 .toggle {
     display: inline-block;
@@ -122,12 +119,13 @@ nav {
 .togglebtn {
     position: relative;
     display: inline-block;
-    width: 34px;
-    height: 17px;
-    background-color: #ED5B25;
+    width: 36px;
+    height: 14px;
+    background-color: #25a0ed;
     border-radius: 30px;
-    border: 2px solid #ED5B25;
+    border: 2px solid #25a0ed;
     transition: 0.2s;
+    z-index: 10;
 }
 
 .togglebtn:after {
@@ -153,8 +151,6 @@ nav {
 .checkbox {
     display: none;
 }
-
-
 
 .right h3:hover,
 .middle a:hover {
@@ -295,15 +291,20 @@ nav {
     cursor: pointer;
 }
 
+#close-login:hover,
+#close-reg:hover {
+    color: #ED5B25;
+}
+
 #policy {
     width: 12px;
     height: 12px;
+    cursor: pointer;
 }
 
 #policy-label {
     top: -6%;
     font-size: 13px;
-    /* display: inline; */
     margin-left: 5px;
 }
 
@@ -365,7 +366,7 @@ nav {
     top: 40%;
     height: 30%;
     width: 100%;
-    display: none;
+    display: flex;
     border: 1px solid #e9f0f0;
     border-radius: 5px;
     justify-content: flex-start;
@@ -467,20 +468,24 @@ nav {
     cursor: pointer;
 }
 
-.pnr_status {
+.pnr_status,
+.running_status,
+.train_details {
     position: relative;
     top: 40%;
     height: 15%;
     width: 100%;
     background-color: #ffffff;
     display: none;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     padding-right: 10px;
 }
 
-.pnr_info {
+.pnr_info,
+.run_info,
+.train_info {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -490,22 +495,35 @@ nav {
     background-color: rgb(223, 123, 87, 0.4);
 }
 
-.pnr_info img {
+.pnr_info img,
+.run_info img,
+.train_info img {
     width: 50px;
     height: 50px;
 }
 
-.pnr_no input {
+.pnr_no,
+.train_no,
+.train_no_name {
+    padding-right: 130px;
+}
+
+.pnr_no input,
+.train_no input,
+.train_no_name input {
     border: none;
     border-bottom: 1px solid #2e2c2b;
     outline: none;
     width: 300px;
 }
 
-.pnr_search {
+.pnr_search,
+.run_search,
+.details_search {
     width: 100px;
     height: 40px;
     font-size: 20px;
+    margin-right: 100px;
     color: #e9f0f0;
     border: 1px solid #ED5B25;
     border-radius: 5px;
@@ -513,7 +531,9 @@ nav {
     transition: all 0.2s ease-in 0.05s;
 }
 
-.pnr_search:hover {
+.pnr_search:hover,
+.run_search:hover,
+.details_search:hover {
     transform: scale(1.1);
 }
 
