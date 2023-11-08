@@ -429,6 +429,10 @@ nav {
     border-radius: 5px;
 }
 
+.opt_1 {
+    border-bottom: 3px solid #ED5B25;
+}
+
 .check {
     display: flex;
     align-items: center;
