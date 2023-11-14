@@ -118,36 +118,3 @@ document.addEventListener("click", (event) => {
     }
 })
 
-const trainDetailsContainer = document.getElementById("trainDetailsContainer");
-
-// Function to display train details
-function displayTrainDetails(train) {
-    const trainDetailsHtml = `
-        <div class="train">
-          <h3>${train.trainName}</h3>
-          <p>Departure: ${train.departure}</p>
-          <p>Arrival: ${train.arrival}</p>
-          <!-- Add more details as needed -->
-        </div>
-      `;
-    trainDetailsContainer.innerHTML = trainDetailsHtml;
-}
-
-// Function to handle the "Search Trains" button click
-function searchTrains() {
-    // Replace this with your actual logic to fetch train details based on user input
-    const userSearchInput = document.getElementById("from").value; // Example: Replace with actual input field ID
-    const dummyTrainDetails = {
-        trainName: "Express 123",
-        departure: "10:00 AM",
-        arrival: "2:00 PM",
-        // Add more details as needed
-    };
-
-    // Call the function to display train details
-    displayTrainDetails(dummyTrainDetails);
-}
-
-// Add an event listener to the "Search Trains" button
-const searchTrainsButton = document.querySelector(".search-train");
-searchTrainsButton.addEventListener("click", searchTrains);
