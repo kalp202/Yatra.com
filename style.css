@@ -178,7 +178,7 @@ nav {
     color: #2e2c2b;
     font-weight: 530;
     position: relative;
-    top: 8.3%;
+    top: 8.1%;
     left: 8.5%;
 }
 
@@ -193,7 +193,7 @@ nav {
     color: #2e2c2b;
     font-weight: 530;
     position: relative;
-    top: 12%;
+    top: 11.8%;
     left: 8%;
 }
 
@@ -336,7 +336,7 @@ nav {
     font-size: 14px;
 }
 
-.search-train {
+.search_train {
     margin-left: 50px;
     font-size: 20px;
     height: 40px;
@@ -346,9 +346,10 @@ nav {
     border: 1px solid #ED5B25;
     border-radius: 5px;
     transition: all 0.2s ease-in 0.05s;
+    cursor: pointer;
 }
 
-.search-train:hover {
+.search_train:hover {
     transform: scale(1.1);
 }
 
@@ -468,6 +469,7 @@ nav {
     border-radius: 5px;
     background-color: #ED5B25;
     transition: all 0.2s ease-in 0.05s;
+    cursor: pointer;
 }
 
 .pnr_search:hover,
@@ -482,3 +484,73 @@ nav {
     background-color: #faf7f7;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background-color: #F3F3F2;
+  }
+
+  .arrival_departure{
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    background-color: #9B2447 ;
+    color: #e9f0f0;
+  }
+
+  .from_modal input,.to_modal input,.date_modal input{
+    border: none;
+    width: 200px;
+    background-color: transparent;
+    border-bottom: black 1px solid;
+    outline: none;
+    padding-left: 10px;
+  }
+
+
+  .search_train_modal{
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #ED5B25;
+    color: #e9f0f0;
+    border: #ED5B25 1px solid;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .modal-content {
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 20px;
+    margin-right: 20px;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    /* max-width: 600px; */
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+  }

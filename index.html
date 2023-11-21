@@ -121,7 +121,7 @@
           <label for="date">Journey date:</label> <br><br>
           <input type="date" name="date" id="date">
         </div>
-        <button class="search-train">Search Trains</button>
+        <button class="search_train">Search Trains</button>
       </div>
       <div class="opt">
         <div class="check">
@@ -178,7 +178,31 @@
     </div>
 
   </div>
-  
+
+  <div id="trainDetailsModal" class="modal">
+    <div class="arrival_departure" id="arrival_departure">
+      <div class="from_modal">
+        <label for="from"> From</label> <br><br>
+        <input type="text" name="from" id="from" placeholder="Leaving from">
+      </div>
+      <div class="arrow_modal">
+        <img src="./photos/exchange.png" alt="" id="exchange">
+      </div>
+      <div class="to_modal">
+        <label for="to">To</label> <br><br>
+        <input type="text" name="to" id="to" placeholder="Going to">
+      </div>
+      <div class="date_modal">
+        <label for="date">Journey date:</label> <br><br>
+        <input type="date" name="date" id="date">
+      </div>
+      <button class="search_train_modal">Search Trains</button>
+    </div>
+    <div class="modal-content" id="trainDetailsModalContent">
+      <!-- Train details will be dynamically inserted here -->
+      <span class="close-modal" onclick="closeTrainDetailsModal()">&times;</span>
+    </div>
+  </div>
 
   <footer id="footer">
     <p>Contact will be here</p>
