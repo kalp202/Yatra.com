@@ -121,78 +121,87 @@ document.addEventListener("click", (event) => {
 // Dummy train details for testing
 const dummyTrainDetailsArray = [
     {
-      trainName: "Express 123",
-      departure: "CityA",
-      arrival: "CityB",
-      duration: "4 hours",
-      stops: ["StationX", "StationY", "StationZ"],
-      // Add more details as needed
-    },
-    {
-      trainName: "SuperFast 456",
-      departure: "CityC",
-      arrival: "CityD",
-      duration: "3 hours",
-      stops: ["StationA", "StationB", "StationC"],
-      // Add more details as needed
+        trainName: "Express 123",
+        departure: "CityA",
+        arrival: "CityB",
+        arrival_time: "2:00",
+        departure_time: "6:00",
+        duration: "4 hours",
+        stops: ["StationX", "StationY", "StationZ"],
+        // Add more details as needed
     },
     {
         trainName: "SuperFast 456",
         departure: "CityC",
         arrival: "CityD",
+        arrival_time: "3:00",
+        departure_time: "6:00",
         duration: "3 hours",
         stops: ["StationA", "StationB", "StationC"],
         // Add more details as needed
-      },
-      {
-        trainName: "SuperFast 456",
-        departure: "CityC",
-        arrival: "CityD",
-        duration: "3 hours",
-        stops: ["StationA", "StationB", "StationC"],
+    },
+    {
+        trainName: "SuperFast 789",
+        departure: "CityE",
+        arrival: "CityF",
+        arrival_time: "2:30",
+        departure_time: "4:30",
+        duration: "2 hours",
+        stops: ["StationM", "StationN", "StationO"],
         // Add more details as needed
-      },
+    },
+    
+
     // Add more train details as needed
-  ];
-  
-  function closeTrainDetailsModal() {
+];
+
+function closeTrainDetailsModal() {
     // Hide the modal
     const modal = document.getElementById("trainDetailsModal");
     modal.style.display = "none";
-  }
-  
-  function displayTrainDetails(trainDetailsArray) {
-    let trainDetailsHtml = "";
-  
-    trainDetailsArray.forEach((train) => {
-      trainDetailsHtml += `
-        <div class="train" style="width: 100vw; height: 100%; background-color: #f0f0f0; padding: 10px; display: flex;
-          justify-content: center;
-          align-items: center; flex-direction: column; margin-bottom: 10px;">
-          <div class="train_info" style="width: 70%; height: 100%; padding: 10px; display: flex;
-            justify-content: center;
-            align-items: center; flex-direction: column;">
-            <h3>${train.trainName}</h3>
-            <p>Departure: ${train.departure}</p>
-            <p>Arrival: ${train.arrival}</p>
-          </div>
-          <p>Duration: ${train.duration}</p>
-        </div>
-      `;
-    });
-  
+}
+
+function displayTrainDetails(trainDetailsArray) {
     // Set the HTML content of the modal
     const modalContent = document.getElementById("trainDetailsModalContent");
-    modalContent.innerHTML = trainDetailsHtml;
-  
+    modalContent.innerHTML = " "; // Clear existing content
+
+    trainDetailsArray.forEach((train) => {
+        let trainDetailsHtml = `
+        <div class="train" style="width: 100vw; height: 100%; background-color: #f0f0f0; padding: 10px; display: flex;
+        justify-content: center;
+        align-items: center; flex-direction: row; margin-bottom: 10px;">
+        <div class="train_info" style="width: 40%; height: 100%; padding: 10px; display: flex;
+           justify-content: center;
+           align-items: center; flex-direction: column;">
+           <h3>${train.trainName}</h3>
+           <div class="from-to" style="height:100%; width:50%; display: flex; justify-content: space-between;
+              align-items: center; flex-direction: row;">
+              <p>Departure: ${train.departure}</p>
+              <p>Arrival: ${train.arrival}</p>
+           </div>
+        </div>
+        <div class="time-info" style=" width:50%;height:100%;  display:flex; justify-content:space-evenly; allign-items:center;flex-direction: row;">
+           <p style="font-size:30px; padding-top:20px;"> ${train.arrival_time}</p>
+           <span style="padding-top:30px;"  >------</span>
+           <p style="padding-top:30px;">Duration: ${train.duration}</p>
+           <span style="padding-top:30px;"  >------</span>
+           <p style="font-size:30px; padding-top:20px;"> ${train.departure_time}</p>
+        </div>
+     </div>
+        `;
+
+        modalContent.innerHTML += trainDetailsHtml;
+    });
+
     // Show the modal
     const modal = document.getElementById("trainDetailsModal");
     modal.style.display = "flex";
-  }
-  
-  // Event listener for the "Search Trains" button
-  const showTrainDetails = document.querySelector(".search_train");
-  showTrainDetails.addEventListener("click", function () {
+}
+
+// Event listener for the "Search Trains" button
+const showTrainDetails = document.querySelector(".search_train");
+showTrainDetails.addEventListener("click", function () {
     // Call the displayTrainDetails function when the button is clicked
     displayTrainDetails(dummyTrainDetailsArray);
-  });
+});

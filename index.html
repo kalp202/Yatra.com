@@ -95,6 +95,7 @@
     </div>
   </nav>
 
+  <!-- page-1 -->
   <div id="page1">
     <div id="option">
       <span class="opt_1">Book Trains</span>
@@ -180,7 +181,7 @@
   </div>
 
   <div id="trainDetailsModal" class="modal">
-    <div class="arrival_departure" id="arrival_departure">
+    <!-- <div class="arrival_departure" id="arrival_departure">
       <div class="from_modal">
         <label for="from"> From</label> <br><br>
         <input type="text" name="from" id="from" placeholder="Leaving from">
@@ -197,10 +198,16 @@
         <input type="date" name="date" id="date">
       </div>
       <button class="search_train_modal">Search Trains</button>
-    </div>
+    </div> -->
     <div class="modal-content" id="trainDetailsModalContent">
       <!-- Train details will be dynamically inserted here -->
       <span class="close-modal" onclick="closeTrainDetailsModal()">&times;</span>
+    </div>
+  </div>
+
+  <div class="pnrModal">
+    <!-- <span class="close-pnrModal">&times; </span> -->
+    <div class="pnrDetails">
     </div>
   </div>
 
