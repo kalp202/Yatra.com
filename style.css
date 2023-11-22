@@ -21,6 +21,8 @@ nav {
 .left img {
     border-radius: 5%;
     max-width: 100%;
+    mix-blend-mode: multiply;
+    cursor: pointer;
 }
 
 .middle {
@@ -73,7 +75,8 @@ nav {
 }
 
 .dropdown_content span,
-.darkmode span {
+.login,
+.register {
     padding: 10px;
     display: block;
     text-decoration: none;
@@ -82,7 +85,9 @@ nav {
     border-top: 1px solid #ccc;
 }
 
-.dropdown_content span:hover {
+.dropdown_content span:hover,
+.login:hover,
+.register:hover {
     background-color: #ED5B25;
     color: #e9f0f0;
 }
@@ -93,186 +98,6 @@ nav {
     /* text-decoration: underline; */
 }
 
-#registerContainer,
-#loginContainer {
-    position: absolute;
-    box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
-    display: none;
-    background: transparent;
-    background-color: rgb(181, 181, 181, 0.3);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 999;
-}
-
-#registerContainer {
-    z-index: 999;
-}
-
-#loginContainer {
-    z-index: 999;
-}
-
-.registerbox,
-.loginbox {
-    height: 100%;
-    width: 70%;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    background-color: rgb(248, 247, 245);
-}
-
-.registerbox img,
-.loginbox img {
-    height: 100%;
-    width: 48%;
-}
-
-.registerform,
-.loginform {
-    padding: 20px 5px 20px 5px;
-    height: 100%;
-    width: 75%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-}
-
-.registerform form,
-.loginform form {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    flex-direction: column;
-    width: 60%;
-}
-
-.registerform form input,
-.loginform form input {
-    border: none;
-    border-bottom: 1.5px solid black;
-    margin: 10px 0 10px 0;
-    /* border-radius: 5px; */
-    background-color: rgb(248, 247, 245);
-    height: 25px;
-    outline: none;
-    transition: all 1s ease-in none;
-    cursor: text;
-}
-
-#name,
-#email,
-#number,
-#password {
-    padding: 0 5px 0 25px;
-}
-
-.registerform form label {
-    font-size: 18px;
-    color: #2e2c2b;
-    font-weight: 530;
-    position: relative;
-    top: 8.1%;
-    left: 8.5%;
-}
-
-.registerform form i {
-    position: relative;
-    top: 12.5%;
-    left: 2%;
-}
-
-.loginform form label {
-    font-size: 18px;
-    color: #2e2c2b;
-    font-weight: 530;
-    position: relative;
-    top: 11.8%;
-    left: 8%;
-}
-
-.loginform form i {
-    position: relative;
-    top: 17%;
-    left: 1%;
-}
-
-.registerform h3,
-.loginform h3 {
-    font-weight: 800;
-    font-size: 40px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#close-login {
-    position: relative;
-    top: -5%;
-    left: 48%;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-#close-reg {
-    position: relative;
-    top: -2%;
-    left: 47%;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-#close-login:hover,
-#close-reg:hover {
-    color: #ED5B25;
-}
-
-#policy {
-    width: 12px;
-    height: 12px;
-    cursor: pointer;
-}
-
-#policy-label {
-    top: -6%;
-    font-size: 13px;
-    margin-left: 5px;
-}
-
-.registerform button,
-.loginform button {
-    width: 50%;
-    height: 7%;
-    font-size: 25px;
-    color: rgb(248, 247, 245);
-    border: 2px #ED5B25 solid;
-    border-radius: 10px;
-    background: #ED5B25;
-    transition: all 0.5s ease 0.05s;
-}
-
-.registerform form input:active {
-    border-color: #ed5b25;
-}
-
-.registerform button:hover,
-.loginform button:hover {
-    transform: scale(1.2);
-}
-
-.loginform p {
-    display: inline;
-}
-
-.registerform a,
-.loginform a {
-    text-decoration: none;
-    font-size: 15px;
-}
 
 #page1 {
     height: 100vh;
@@ -294,6 +119,11 @@ nav {
     display: flex;
     justify-content: space-evenly;
     cursor: pointer;
+}
+
+#option a {
+    text-decoration: none;
+    color: #e9f0f0;
 }
 
 .booking {
@@ -365,10 +195,6 @@ nav {
     border-radius: 5px;
 }
 
-.opt_1 {
-    border-bottom: 3px solid #ED5B25;
-}
-
 .check {
     display: flex;
     align-items: center;
@@ -416,7 +242,7 @@ nav {
     height: 15%;
     width: 100%;
     background-color: #ffffff;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
@@ -494,12 +320,12 @@ nav {
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
     background-color: #F3F3F2;
     overflow-y: auto;
-  }
+}
 
-  .arrival_departure{
+.arrival_departure {
     height: 100px;
     width: 100%;
     padding: 10px;
@@ -508,21 +334,23 @@ nav {
     display: flex;
     justify-content: center;
     gap: 70px;
-    background-color: #9B2447 ;
+    background-color: #9B2447;
     color: #e9f0f0;
-  }
+}
 
-  .from_modal input,.to_modal input,.date_modal input{
+.from_modal input,
+.to_modal input,
+.date_modal input {
     border: none;
     width: 200px;
     background-color: transparent;
     border-bottom: black 1px solid;
     outline: none;
     padding-left: 10px;
-  }
+}
 
 
-  .search_train_modal{
+.search_train_modal {
     width: 200px;
     height: 40px;
     margin-top: 10px;
@@ -531,9 +359,9 @@ nav {
     border: #ED5B25 1px solid;
     border-radius: 5px;
     font-size: 20px;
-  }
+}
 
-  .modal-content {
+.modal-content {
     box-sizing: border-box;
     background-color: #fff;
     padding: 20px;
@@ -546,18 +374,18 @@ nav {
     border-radius: 8px;
     flex-direction: column;
     /* max-width: 600px; */
-  }
+}
 
-  .close-modal {
+.close-modal {
     position: absolute;
     top: 10%;
     right: 10%;
     font-size: 30px;
     color: #ffffff;
     cursor: pointer;
-  }
+}
 
-  .pnrModal{
+.pnrModal {
     display: none;
     justify-content: center;
     align-items: center;
@@ -565,4 +393,4 @@ nav {
     width: 100vh;
     background: transparent;
     backdrop-filter: blur(10px);
-  }
+}

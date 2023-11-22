@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- navbar -->
+    <nav>
+        <div class="left">
+            <img src="./photos/main logo.jpeg" alt="" width="90px" height="80px" class="logo"/>
+        </div>
+        <div class="middle">
+            <a href="#page1">Home</a>
+            <a href="">About us</a>
+            <a href="#footer">Contact</a>
+        </div>
+        <div class="right">
+            <div class="dropdown">
+                <i class="fas fa-user-circle" id="profileicon"></i>
+                <div class="dropdown_content">
+                    <span class="profile">Profile</span>
+                    <a href="login.html" class="login">Login</a>
+                    <a href="register.html" class="register">Register</a>
+                    <span class="paymenthistory">Payment History</span>
+                    <span class="logout">Log Out</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- page-1 -->
+    <div id="page1">
+        <div id="option">
+            <a href="book_train.html" class="opt_1" style="border-bottom:3.5px solid #ED5B25;">Book Trains</a>
+            <a href="pnr_status.html" class="opt_2">Check PNR Status</a>
+            <a href="run_status.html" class="opt_3">Running Status</a>
+            <a href="train_details.html" class="opt_4">Search Train</a>
+        </div>
+
+        <div class="booking">
+            <div class="journey">
+                <div class="from">
+                    <label for="from"> From</label> <br><br>
+                    <input type="text" name="from" id="from" placeholder="Leaving from">
+                </div>
+                <div class="arrow">
+                    <img src="./photos/exchange.png" alt="" id="exchange">
+                </div>
+                <div class="to">
+                    <label for="to">To</label> <br><br>
+                    <input type="text" name="to" id="to" placeholder="Going to">
+                </div>
+                <div class="date">
+                    <label for="date">Journey date:</label> <br><br>
+                    <input type="date" name="date" id="date">
+                </div>
+                <button class="search_train">Search Trains</button>
+            </div>
+            <div class="opt">
+                <div class="check">
+                    <input type="checkbox" id="free-cancel">
+                    <p class="free-cancel-text">Opt for free cancellation</p>
+                </div>
+                <div class="details">
+                    <p>Rs.0 cancellation fee</p>
+                    <span>|</span>
+                    <p>Instant refunds</p>
+                    <span>|</span>
+                    <p>No documentation required.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="trainDetailsModal" class="modal">
+        <!-- <div class="arrival_departure" id="arrival_departure">
+      <div class="from_modal">
+        <label for="from"> From</label> <br><br>
+        <input type="text" name="from" id="from" placeholder="Leaving from">
+      </div>
+      <div class="arrow_modal">
+        <img src="./photos/exchange.png" alt="" id="exchange">
+      </div>
+      <div class="to_modal">
+        <label for="to">To</label> <br><br>
+        <input type="text" name="to" id="to" placeholder="Going to">
+      </div>
+      <div class="date_modal">
+        <label for="date">Journey date:</label> <br><br>
+        <input type="date" name="date" id="date">
+      </div>
+      <button class="search_train_modal">Search Trains</button>
+    </div> -->
+        <div class="modal-content" id="trainDetailsModalContent">
+            <!-- Train details will be dynamically inserted here -->
+            <span class="close-modal" onclick="closeTrainDetailsModal()">&times;</span>
+        </div>
+    </div>
+
+    <div class="pnrModal">
+        <!-- <span class="close-pnrModal">&times; </span> -->
+        <div class="pnrDetails">
+        </div>
+    </div>
+
+    <footer id="footer">
+        <p>Contact will be here</p>
+    </footer>
+
+    <script>
+        const home=document.querySelector(".logo");
+        home.addEventListener("click",()=>{
+            window.location.href='index.html';
+        })
+    </script>
+
+</body>
+
+</html>
