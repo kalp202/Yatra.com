@@ -311,15 +311,14 @@ nav {
 }
 
 .modal {
-    display: none;
-    position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     background-color: #F3F3F2;
     overflow-y: auto;
@@ -330,13 +329,14 @@ nav {
     width: 100%;
     padding: 10px;
     position: relative;
-    margin-bottom: 10%;
+    margin-bottom: 280px;
     display: flex;
     justify-content: center;
     gap: 70px;
     background-color: #9B2447;
     color: #e9f0f0;
 }
+
 
 .from_modal input,
 .to_modal input,
@@ -363,6 +363,8 @@ nav {
 
 .modal-content {
     box-sizing: border-box;
+    position: relative;
+    top: 15%;
     background-color: #fff;
     padding: 20px;
     margin-right: 20px;
@@ -376,21 +378,79 @@ nav {
     /* max-width: 600px; */
 }
 
-.close-modal {
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    font-size: 30px;
-    color: #ffffff;
-    cursor: pointer;
-}
-
 .pnrModal {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
-    width: 100vh;
-    background: transparent;
-    backdrop-filter: blur(10px);
+    width: 100vw;
+}
+
+.pnrDetails {
+    width: 100%;
+    height: 120px;
+    background-color: #9B2447;
+}
+
+.pnr_input {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #9B2447;
+    margin-bottom: 100px;
+}
+
+.pnr_input h3 {
+    color: #e9f0f0;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+}
+
+.pnrForm {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.pnrForm input {
+    width: 65%;
+    height: 40px;
+    padding: 5px;
+    outline: none;
+}
+
+.pnrForm button {
+    box-sizing: border-box;
+    width: 30%;
+    height: 39px;
+    border: 1px solid #ED5B25;
+    background-color: #ED5B25;
+    color: #e9f0f0;
+    font-size: 20px;
+}
+
+.pnr_reference_link {
+    width: 40%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.pnr_reference_link a {
+    text-decoration: none;
+    color: #2e2c2b;
+    border: 1px solid #ed5b25;
+    padding: 10px;
+    background-color: #feebe6;
+    border-radius: 5px;
+    font-size: 17px;
 }

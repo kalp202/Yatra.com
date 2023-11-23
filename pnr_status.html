@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>PNR Status | Yatra.com</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
@@ -15,7 +15,7 @@
 
   <nav>
     <div class="left">
-      <img src="./photos/main logo.jpeg" alt="" width="90px" height="80px" class="logo"/>
+      <img src="./photos/main logo.jpeg" alt="" width="90px" height="80px" class="logo" />
     </div>
     <div class="middle">
       <a href="#page1">Home</a>
@@ -59,23 +59,40 @@
 
   </div>
 
-
-  <div class="pnrModal">
-    <!-- <span class="close-pnrModal">&times; </span> -->
-    <div class="pnrDetails">
-    </div>
-  </div>
-
   <footer id="footer">
     <p>Contact will be here</p>
   </footer>
 
   <script>
-    const home=document.querySelector(".logo");
-    home.addEventListener("click",()=>{
-        window.location.href='index.html';
+    const home = document.querySelector(".logo");
+    home.addEventListener("click", () => {
+      window.location.href = 'index.html';
     })
-</script>
+
+    const pnrDetailsArray = [
+      {
+        trainName: "Express 123",
+        departure: "CityA",
+        arrival: "CityB",
+        arrival_time: "2:00",
+        departure_time: "6:00",
+        duration: "4 hours",
+        stops: ["StationX", "StationY", "StationZ"],
+        // Add more details as needed
+      },
+    ];
+
+    // Event listener for the "Search Trains" button
+    const showTrainDetails = document.querySelector(".pnr_search");
+    showTrainDetails.addEventListener("click", function () {
+      // Store the train details in localStorage
+      localStorage.setItem('pnrDetailsArray', JSON.stringify(pnrDetailsArray));
+      // Redirect to the result page
+      window.location.href = 'pnr_status_result.html';
+
+    });
+
+  </script>
 
 </body>
 
