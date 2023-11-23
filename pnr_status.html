@@ -40,7 +40,10 @@
   <div id="page1">
     <div id="option">
       <a href="book_train.html" class="opt_1">Book Trains</a>
-      <a href="pnr_status.html" class="opt_2" style="border-bottom:3.5px solid #ED5B25;">Check PNR Status</a>
+      <!-- <a href="pnr_status.html" class="opt_2" style="border-bottom:3.5px solid #ED5B25;">Check PNR Status</a> -->
+      <a href="book_train.html" class="opt_2"
+        style="background-color:#e9f0f0; width:197px; padding:5px; border-radius: 10px 10px 0 0; color: #ED5B25;">Check
+        PNR Status</a>
       <a href="run_status.html" class="opt_3">Running Status</a>
       <a href="train_details.html" class="opt_4">Search Train</a>
     </div>
@@ -69,29 +72,47 @@
       window.location.href = 'index.html';
     })
 
-    const pnrDetailsArray = [
+    const pnrDetailsArray = {
+      trainName: "Express 123",
+      departure: "CityA",
+      arrival: "CityB",
+      arrival_time: "2:00",
+      arrival_date: "23-12-2023",
+      departure_time: "6:00",
+      departure_date: "23-12-2023",
+      duration: "4 hours"
+    };
+
+    const passengerInfo = [
       {
-        trainName: "Express 123",
-        departure: "CityA",
-        arrival: "CityB",
-        arrival_time: "2:00",
-        departure_time: "6:00",
-        duration: "4 hours",
-        stops: ["StationX", "StationY", "StationZ"],
-        // Add more details as needed
+        booking_status: "RAC-18",
+        current_status: "Confirm",
+        coach: "B3",
+        berth: "45"
       },
-    ];
+      {
+        booking_status: "RAC-18",
+        current_status: "Confirm",
+        coach: "B3",
+        berth: "45"
+      },
+      {
+        booking_status: "RAC-18",
+        current_status: "Confirm",
+        coach: "B3",
+        berth: "45"
+      }
+    ]
 
     // Event listener for the "Search Trains" button
     const showTrainDetails = document.querySelector(".pnr_search");
     showTrainDetails.addEventListener("click", function () {
       // Store the train details in localStorage
       localStorage.setItem('pnrDetailsArray', JSON.stringify(pnrDetailsArray));
+      localStorage.setItem('passengerInfo', JSON.stringify(passengerInfo));
       // Redirect to the result page
       window.location.href = 'pnr_status_result.html';
-
     });
-
   </script>
 
 </body>

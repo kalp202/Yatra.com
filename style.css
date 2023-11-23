@@ -12,6 +12,7 @@ nav {
     align-items: center;
     justify-content: space-around;
     position: relative;
+    position: absolute;
 }
 
 .left {
@@ -103,6 +104,7 @@ nav {
     height: 100vh;
     width: 100vw;
     background-image: url(./photos/background1.jpg);
+    background-color: rgba(255, 255, 255, 0.5);
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
@@ -110,7 +112,7 @@ nav {
 
 #option {
     position: relative;
-    top: 40%;
+    top: 30%;
     width: 100%;
     background-color: rgba(121, 119, 119, 0.4);
     color: #faf7f7;
@@ -128,7 +130,7 @@ nav {
 
 .booking {
     position: relative;
-    top: 40%;
+    top: 30%;
     height: 30%;
     width: 100%;
     display: flex;
@@ -238,10 +240,10 @@ nav {
 .running_status,
 .train_details {
     position: relative;
-    top: 40%;
+    top: 30%;
     height: 15%;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #e9f0f0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -281,6 +283,7 @@ nav {
     border-bottom: 1px solid #2e2c2b;
     outline: none;
     width: 300px;
+    mix-blend-mode: multiply;
 }
 
 .pnr_search,
@@ -315,13 +318,14 @@ nav {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: #F3F3F2;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+    overflow-x: hidden;
 }
 
 .arrival_departure {
@@ -329,7 +333,7 @@ nav {
     width: 100%;
     padding: 10px;
     position: relative;
-    margin-bottom: 280px;
+    margin-bottom: 80px;
     display: flex;
     justify-content: center;
     gap: 70px;
@@ -364,18 +368,16 @@ nav {
 .modal-content {
     box-sizing: border-box;
     position: relative;
-    top: 15%;
     background-color: #fff;
     padding: 20px;
     margin-right: 20px;
     width: 100%;
-    height: 30%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
     flex-direction: column;
-    /* max-width: 600px; */
 }
 
 .pnrModal {
@@ -383,8 +385,10 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
     width: 100vw;
+    gap: 40px;
+    overflow-x: hidden;
 }
 
 .pnrDetails {
@@ -453,4 +457,48 @@ nav {
     background-color: #feebe6;
     border-radius: 5px;
     font-size: 17px;
+}
+
+.passengerInfo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid #2e2c2b; */
+}
+
+.pass_top_row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 45px;
+    color: #676363;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+.pass_bottom_row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 80px;
+    font-weight: 700;
+}
+
+.passengerDetails {
+    width: 40%;
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    border: 1px solid #2e2c2b;
 }

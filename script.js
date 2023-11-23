@@ -165,5 +165,6 @@ const showTrainDetails = document.querySelector(".search_train");
 showTrainDetails.addEventListener("click", function () {
     // Call the displayTrainDetails function when the button is clicked
     // displayTrainDetails(dummyTrainDetailsArray);
+    localStorage.setItem('dummyTrainDetailsArray',JSON.stringify(dummyTrainDetailsArray))
     window.location.href = 'book_train_result.html';
 });

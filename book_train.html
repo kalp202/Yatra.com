@@ -40,7 +40,9 @@
     <!-- page-1 -->
     <div id="page1">
         <div id="option">
-            <a href="book_train.html" class="opt_1" style="border-bottom:3.5px solid #ED5B25;">Book Trains</a>
+            <a href="book_train.html" class="opt_1"
+                style="background-color:#e9f0f0; width:133px; padding:5px; border-radius: 10px 10px 0 0; color: #ED5B25;">Book Trains</a>
+            <!-- <a href="book_train.html" class="opt_1" style="border-bottom:3.5px solid #ED5B25;">Book Trains</a> -->
             <a href="pnr_status.html" class="opt_2">Check PNR Status</a>
             <a href="run_status.html" class="opt_3">Running Status</a>
             <a href="train_details.html" class="opt_4">Search Train</a>
@@ -78,38 +80,6 @@
                     <p>No documentation required.</p>
                 </div>
             </div>
-        </div>
-
-
-    </div>
-
-    <div id="trainDetailsModal" class="modal">
-        <div class="arrival_departure" id="arrival_departure">
-            <div class="from_modal">
-                <label for="from"> From</label> <br><br>
-                <input type="text" name="from" id="from" placeholder="Leaving from">
-            </div>
-            <div class="arrow_modal">
-                <img src="./photos/exchange.png" alt="" id="exchange">
-            </div>
-            <div class="to_modal">
-                <label for="to">To</label> <br><br>
-                <input type="text" name="to" id="to" placeholder="Going to">
-            </div>
-            <div class="date_modal">
-                <label for="date">Journey date:</label> <br><br>
-                <input type="date" name="date" id="date">
-            </div>
-            <button class="search_train_modal">Search Trains</button>
-        </div>
-        <div class="modal-content" id="trainDetailsModalContent">
-            <!-- Train details will be dynamically inserted here -->
-        </div>
-    </div>
-
-    <div class="pnrModal">
-        <!-- <span class="close-pnrModal">&times; </span> -->
-        <div class="pnrDetails">
         </div>
     </div>
 
@@ -174,7 +144,7 @@
                 duration: "2 hours",
                 stops: ["StationM", "StationN", "StationO"],
                 // Add more details as needed
-            }, 
+            },
             {
                 trainName: "SuperFast 456",
                 departure: "CityC",
