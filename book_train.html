@@ -55,7 +55,7 @@
                     <input type="text" name="from" id="from" placeholder="Leaving from">
                 </div>
                 <div class="arrow">
-                    <img src="./photos/exchange.png" alt="" id="exchange">
+                    <img src="./photos/exchange.png" alt="" id="exchange" onclick="exchangeValue()">
                 </div>
                 <div class="to">
                     <label for="to">To</label> <br><br>
@@ -190,13 +190,31 @@
         // Event listener for the "Search Trains" button
         const showTrainDetails = document.querySelector(".search_train");
         showTrainDetails.addEventListener("click", function () {
-            console.log("Moved to next page.");
+
+            let from = document.getElementById("from").value
+            let to = document.getElementById("to").value
+            let date = document.getElementById("date").value
             // Store the train details in localStorage
             localStorage.setItem('dummyTrainDetailsArray', JSON.stringify(dummyTrainDetailsArray));
+            localStorage.setItem('from', from)
+            localStorage.setItem('to', to)
+            localStorage.setItem('date', date)
             // Redirect to the result page
             window.location.href = 'book_train_result.html';
 
         });
+
+
+
+        function exchangeValue() {
+            let from = document.getElementById("from").value
+            let to = document.getElementById("to").value
+
+
+            document.getElementById("from").value = to;
+            document.getElementById("to").value = from;
+
+        }
 
     </script>
 

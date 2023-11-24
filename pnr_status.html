@@ -54,7 +54,7 @@
       </div>
       <div class="pnr_no">
         <label for="no">PNR number</label><br><br>
-        <input type="text" name="no" id="no" placeholder="Enter PNR number">
+        <input type="number" name="no" id="pnrNo" placeholder="Enter PNR number">
       </div>
       <button class="pnr_search">Search</button>
     </div>
@@ -66,6 +66,7 @@
   </footer>
 
   <script>
+
     const home = document.querySelector(".logo");
     home.addEventListener("click", () => {
       window.location.href = 'index.html';
@@ -106,6 +107,8 @@
     // Event listener for the "Search Trains" button
     const showTrainDetails = document.querySelector(".pnr_search");
     showTrainDetails.addEventListener("click", function () {
+      const pnrNo = document.getElementById("pnrNo").value
+      localStorage.setItem('pnrNo', pnrNo);
       // Store the train details in localStorage
       localStorage.setItem('pnrDetailsArray', JSON.stringify(pnrDetailsArray));
       localStorage.setItem('passengerInfo', JSON.stringify(passengerInfo));

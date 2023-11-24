@@ -16,7 +16,7 @@
                 <input type="text" name="from" id="from" placeholder="Leaving from">
             </div>
             <div class="arrow_modal">
-                <img src="./photos/exchange.png" alt="" id="exchange">
+                <img src="./photos/exchange.png" alt="" id="exchange" onclick="exchangeValue()">
             </div>
             <div class="to_modal">
                 <label for="to">To</label> <br><br>
@@ -35,11 +35,19 @@
 
     <script>
 
+        //to show value from previous page. 
+        const from = localStorage.getItem('from');
+        const to = localStorage.getItem('to');
+        const date = localStorage.getItem('date');
+
+        document.getElementById("from").value = from;
+        document.getElementById("to").value = to;
+        document.getElementById("date").value = date;
+
+
         document.addEventListener('DOMContentLoaded', function () {
-            console.log("Came to second page.");
             // Retrieve dummy train details from localStorage
             const dummyTrainDetailsArray = JSON.parse(localStorage.getItem('dummyTrainDetailsArray')) || [];
-            console.log(dummyTrainDetailsArray);
 
             const modalContent = document.getElementById("trainDetailsModalContent");
 
@@ -70,8 +78,18 @@
 
                 // Append each train details to modal content
                 modalContent.innerHTML += trainDetailsHtml;
+            });
         });
-        });
+
+        function exchangeValue() {
+            let from = document.getElementById("from").value
+            let to = document.getElementById("to").value
+
+
+            document.getElementById("from").value = to;
+            document.getElementById("to").value = from;
+
+        }
 
     </script>
 </body>
