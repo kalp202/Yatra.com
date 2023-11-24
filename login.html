@@ -30,7 +30,7 @@
 
         .loginbox {
             height: 100%;
-            width: 70%;
+            width: 60%;
             display: flex;
             /* justify-content: center; */
             align-items: center;
@@ -39,7 +39,7 @@
 
         .loginbox img {
             height: 100%;
-            width: 48%;
+            width: 40%;
         }
 
         .loginform {
@@ -90,7 +90,7 @@
 
         .loginform form i {
             position: relative;
-            top: 17%;
+            top: 16.8%;
             left: 1%;
         }
 
@@ -99,14 +99,6 @@
             font-weight: 800;
             font-size: 40px;
             font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-
-        #close-login {
-            position: relative;
-            top: -5%;
-            left: 48%;
-            font-size: 30px;
-            cursor: pointer;
         }
 
         #close-login:hover {
@@ -135,6 +127,7 @@
             border-radius: 10px;
             background: #ED5B25;
             transition: all 0.5s ease 0.05s;
+            cursor: pointer;
         }
 
         .loginform form input:active {
@@ -152,6 +145,13 @@
         .loginform a {
             text-decoration: none;
             font-size: 15px;
+        }
+
+        #showpassword {
+            position: relative;
+            top: -27px;
+            left: 250px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -173,6 +173,7 @@
                     <i class="fas fa-unlock"></i>
                     <label for="password" class="clickable">Password</label>
                     <input type="password" id="password">
+                    <span><i class="fas fa-eye" id="showpassword"></i></span>
                     <a href="">Forgot password?</a>
                 </form>
                 <button>Login</button>
@@ -193,12 +194,23 @@
         let labels = document.querySelectorAll(".clickable");
         labels.forEach((label) => {
             label.addEventListener("click", () => {
-                label.style.top = "3%";
+                label.style.top = "2.8%";
                 label.style.left = "2%";
                 label.style.color = "#ED5B25";
                 label.style.fontSize = "16px";
             });
         });
+
+        let showPassword = document.getElementById("showpassword")
+        let password = document.getElementById("password")
+        showPassword.addEventListener("click", () => {
+            if (password.type === 'password') {
+                password.type = 'text'
+            }
+            else {
+                password.type = 'password'
+            }
+        })
     </script>
 </body>
 
