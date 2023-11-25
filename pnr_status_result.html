@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PNR Status | Yatra.com</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="pnrModal">
+    <div class="pnr_input">
+      <h3>PNR Status Check</h3>
+      <div class="pnrForm">
+        <input type="number" placeholder="PNR Number" id="pnrNo">
+        <button>Check PNR Status</button>
+      </div>
+      <div class="pnr_reference_link">
+        <a href="book_train.html">Train Booking</a>
+        <a href="run_status.html">Train Running Status</a>
+      </div>
+    </div>
+    <div class="pnrDetails">
+    </div>
+    <div class="passengerInfo">
+    </div>
+  </div>
+
+  <script>
+
+    const pnrNo = localStorage.getItem('pnrNo') || [];
+    document.getElementById("pnrNo").value = pnrNo;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const pnrDetails = JSON.parse(localStorage.getItem('pnrDetailsArray'));
+      const passengerInfo = JSON.parse(localStorage.getItem('passengerInfo'))
+
+
+      const pnrContent = document.querySelector(".pnrDetails");
+      const passInfo = document.querySelector(".passengerInfo");
+
+      let trainDetailsHtml = `
+            <div class="train" style="width: 100vw; height: 100%; background-color: #f0f0f0; padding: 10px; display: flex;
+              justify-content: center; align-items: center; flex-direction: row; margin-bottom: 10px;">
+              <div class="train_info" style="width: 40%; height: 100%; padding: 10px; display: flex;
+                justify-content: center; align-items: center; flex-direction: column;">
+                <h3>${pnrDetails.trainName}</h3>
+                <div class="from-to" style="height:100%; width:50%; display: flex; justify-content: space-between;
+                  align-items: center; flex-direction: row;">
+                  <p>Departure: ${pnrDetails.departure}</p>
+                  <p>Arrival: ${pnrDetails.arrival}</p>
+                </div>
+              </div>
+              <div class="time-info"
+                style=" width:70%;height:100%;  display:flex; justify-content:space-evenly; align-items:center; flex-direction: row;">
+                <div class="arrival"
+                  style="display:; justify-content:center; align-items:center; flex-direction:row;">
+                  <p style="font-size:30px; padding-top:20px;"> ${pnrDetails.arrival_time}</p>
+                  <p style="font-size:15px;">${pnrDetails.arrival_date}</p>
+                </div>
+                <span style="padding-top:30px;">------</span>
+                <p style="padding-top:30px;">Duration: ${pnrDetails.duration}</p>
+                <span style="padding-top:30px;">------</span>
+                <div class="departure"
+                  style="display:flex; justify-content:center; align-items:center; flex-direction:column;">
+                  <p style="font-size:30px; padding-top:20px;"> ${pnrDetails.departure_time}</p>
+                  <p style="font-size:15px;">${pnrDetails.departure_date}</p>
+                </div>
+              </div>
+            </div>`;
+
+      // Append each train details to modal content
+      pnrContent.innerHTML += trainDetailsHtml;
+
+      passengerInfo.forEach((passenger) => {
+        let passengerDetailsHtml = `
+              <div class="passengerDetails" >
+                <div class="pass_top_row" >
+                  <p>Booking Status</p>
+                  <p>Current Status</p>
+                  <p> Coach</p>
+                  <p>Berth</p>
+                  <p>Class</p><br>
+                </div>
+                <div class="pass_bottom_row" >
+                  <p>${passenger.booking_status}</p>
+                  <p>${passenger.current_status}</p>
+                  <p>${passenger.coach}</p>
+                  <p>${passenger.berth}</p>
+                  <p>${passenger.class}</P>
+                </div>
+              </div>`;
+
+        passInfo.innerHTML += passengerDetailsHtml;
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Train | Yatra.com</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="left">
+      <img src="./photos/main logo.jpeg" alt="" width="90px" height="80px" class="logo" />
+    </div>
+    <div class="middle">
+      <a href="#page1">Home</a>
+      <a href="">About us</a>
+      <a href="#footer">Contact</a>
+    </div>
+    <div class="right">
+      <div class="dropdown">
+        <i class="fas fa-user-circle" id="profileicon"></i>
+        <div class="dropdown_content">
+          <span class="profile">Profile</span>
+          <a href="login.html" class="login">Login</a>
+          <a href="register.html" class="register">Register</a>
+          <span class="paymenthistory">Payment History</span>
+          <span class="logout">Log Out</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- page-1 -->
+  <div id="page1">
+    <div id="option">
+      <a href="book_train.html" class="opt_1">Book Trains</a>
+      <a href="pnr_status.html" class="opt_2">Check PNR Status</a>
+      <a href="run_status.html" class="opt_3">Running Status</a>
+      <!-- <a href="train_details.html" class="opt_4" style="border-bottom:3.5px solid #ED5B25;">Search Train</a> -->
+      <a href="book_train.html" class="opt_4"
+        style="background-color:#e9f0f0; width:138px; padding:5px; border-radius: 10px 10px 0 0; color: #ED5B25;">Search
+        Train
+      </a>
+    </div>
+
+    <div class="train_details">
+      <div class="train_info">
+        <img src="./photos/train_detail.png" alt="">
+        <p>Search train by name or number.</p>
+      </div>
+      <div class="train_no_name">
+        <label for="no">Train number/name</label><br><br>
+        <input type="text" name="no" id="no" placeholder="Enter Train number or name">
+      </div>
+      <button class="details_search">Search</button>
+    </div>
+
+  </div>
+
+  <footer id="footer">
+    <p>Contact will be here</p>
+  </footer>
+
+  <script>
+    const home = document.querySelector(".logo");
+    home.addEventListener("click", () => {
+      window.location.href = 'index.html';
+    })
+
+    const dummyTrainDetailsArray = [
+      {
+        trainName: "Express 123",
+        departure: "CityA",
+        arrival: "CityB",
+        arrival_time: "2:00",
+        departure_time: "6:00",
+        duration: "4 hours",
+        stops: ["StationX", "StationY", "StationZ"],
+        // Add more details as needed
+      },
+      {
+        trainName: "SuperFast 456",
+        departure: "CityC",
+        arrival: "CityD",
+        arrival_time: "3:00",
+        departure_time: "6:00",
+        duration: "3 hours",
+        stops: ["StationA", "StationB", "StationC"],
+        // Add more details as needed
+      }]
+
+    let searchButton = document.querySelector(".details_search")
+    searchButton.addEventListener("click", () => {
+      localStorage.setItem('dummyTrainDetails', JSON.stringify(dummyTrainDetailsArray));
+      window.location.href = 'train_details_result.html';
+    })
+  </script>
+
+</body>
+
+</html>

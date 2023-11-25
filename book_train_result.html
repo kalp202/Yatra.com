@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Train | Yatra.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="trainDetailsModal" class="modal">
+        <div class="arrival_departure" id="arrival_departure">
+            <div class="from_modal">
+                <label for="from"> From</label> <br><br>
+                <input type="text" name="from" id="from" placeholder="Leaving from">
+            </div>
+            <div class="arrow_modal">
+                <img src="./photos/exchange.png" alt="" id="exchange" onclick="exchangeValue()">
+            </div>
+            <div class="to_modal">
+                <label for="to">To</label> <br><br>
+                <input type="text" name="to" id="to" placeholder="Going to">
+            </div>
+            <div class="date_modal">
+                <label for="date">Journey date:</label> <br><br>
+                <input type="date" name="date" id="date">
+            </div>
+            <button class="search_train_modal">Search Trains</button>
+        </div>
+        <div class="modal-content" id="trainDetailsModalContent">
+            <!-- Train details will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+
+        //to show value from previous page. 
+        const from = localStorage.getItem('from');
+        const to = localStorage.getItem('to');
+        const date = localStorage.getItem('date');
+
+        document.getElementById("from").value = from;
+        document.getElementById("to").value = to;
+        document.getElementById("date").value = date;
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve dummy train details from localStorage
+            const dummyTrainDetailsArray = JSON.parse(localStorage.getItem('dummyTrainDetailsArray')) || [];
+
+            const modalContent = document.getElementById("trainDetailsModalContent");
+
+            // Loop through each train and create HTML
+            dummyTrainDetailsArray.forEach((train) => {
+                let trainDetailsHtml = `    
+                <div class="train" style="width: 100vw; height: 100%; background-color: #f0f0f0; padding: 10px; display: flex;
+                    justify-content: center; align-items: center; flex-direction: row; margin-bottom: 10px;">
+                    <div class="train_info" style="width: 40%; height: 100%; padding: 10px; display: flex;
+                        justify-content: center;
+                        align-items: center; flex-direction: column;">
+                        <h3>${train.trainName}</h3>
+                        <div class="from-to" style="height:100%; width:50%; display: flex; justify-content: space-between;
+                            align-items: center; flex-direction: row;">
+                            <p>Departure: ${train.departure}</p>
+                            <p>Arrival: ${train.arrival}</p>
+                        </div>
+                    </div>
+                    <div class="time-info" style=" width:50%;height:100%;  display:flex; justify-content:space-evenly; allign-items:center;flex-direction: row;">
+                        <p style="font-size:30px; padding-top:20px;"> ${train.arrival_time}</p>
+                        <span style="padding-top:30px;"  >------</span>
+                        <p style="padding-top:30px;">Duration: ${train.duration}</p>
+                        <span style="padding-top:30px;"  >------</span>
+                        <p style="font-size:30px; padding-top:20px;"> ${train.departure_time}</p>
+                    </div>
+                </div>
+                `;
+
+                // Append each train details to modal content
+                modalContent.innerHTML += trainDetailsHtml;
+            });
+        });
+
+        function exchangeValue() {
+            let from = document.getElementById("from").value
+            let to = document.getElementById("to").value
+
+
+            document.getElementById("from").value = to;
+            document.getElementById("to").value = from;
+
+        }
+
+    </script>
+</body>
+
+</html>
