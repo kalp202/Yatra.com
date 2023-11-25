@@ -72,9 +72,32 @@
       window.location.href = 'index.html';
     })
 
-    let searchButton=document.querySelector(".details_search")
-    searchButton.addEventListener("click",()=>{
-      window.location.href='train_details_result.html';
+    const dummyTrainDetailsArray = [
+      {
+        trainName: "Express 123",
+        departure: "CityA",
+        arrival: "CityB",
+        arrival_time: "2:00",
+        departure_time: "6:00",
+        duration: "4 hours",
+        stops: ["StationX", "StationY", "StationZ"],
+        // Add more details as needed
+      },
+      {
+        trainName: "SuperFast 456",
+        departure: "CityC",
+        arrival: "CityD",
+        arrival_time: "3:00",
+        departure_time: "6:00",
+        duration: "3 hours",
+        stops: ["StationA", "StationB", "StationC"],
+        // Add more details as needed
+      }]
+
+    let searchButton = document.querySelector(".details_search")
+    searchButton.addEventListener("click", () => {
+      localStorage.setItem('dummyTrainDetails', JSON.stringify(dummyTrainDetailsArray));
+      window.location.href = 'train_details_result.html';
     })
   </script>
 
