@@ -56,9 +56,9 @@ A comprehensive travel booking system inspired by Yatra.com, developed using the
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-## License
+<!-- ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. -->
 
 ## Contact
 
