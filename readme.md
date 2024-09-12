@@ -62,4 +62,4 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For any questions or suggestions, please contact [Your Name] at [your email].
+For any questions or suggestions, please contact Kalp Patel at kalppatel2024@gmail.com.
