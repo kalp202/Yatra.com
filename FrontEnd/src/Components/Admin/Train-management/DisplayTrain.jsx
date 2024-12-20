@@ -4,7 +4,7 @@ export default function DisplayTrain({ train, button, buttonLabel, onButtonClick
     return (
         <div className='w-full p-4 my-4 bg-white rounded-lg shadow-lg flex flex-col gap-y-3 border border-orange-200'>
             <div className='w-full flex items-center gap-x-20'>
-                <div className='text-xl font-bold mb-2 w-6/12 text-orange-600'>{train.trainName} - {train.trainNo}</div>
+                <div className='text-xl font-bold mb-2 w-6/12 text-blue-600'>{train.trainName} - {train.trainNo}</div>
                 <div className='flex justify-between w-6/12'>
                     <div className='flex flex-col items-start w-1/2'>
                         <div className='text-lg font-semibold text-orange-500'>Departure</div>

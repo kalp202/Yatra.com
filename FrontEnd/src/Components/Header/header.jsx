@@ -33,7 +33,7 @@ export default function Header() {
     ];
 
     return (
-        <header className="w-full bg-custom-background shadow-md">
+        <header className="w-full bg-white shadow-md">
             <Container>
                 <nav className="flex items-center justify-between px-6 py-3">
                     <div className="flex items-center">
