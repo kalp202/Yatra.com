@@ -47,10 +47,23 @@ A comprehensive travel booking system inspired by Yatra.com, developed using the
     npm run dev
     ```
 
-## Usage
+## How to Use the System
 
-- **User Login**: Register or log in to book train tickets.
-- **Admin Access**: Admins can log in to manage train details and schedules.
+### For Users:
+- **Register or Log In**: Create an account or log in to access the platform.
+- **Book Tickets**: Search for trains and book tickets for your journey.
+- **Check PNR Status**: View the status of your booked tickets.
+- **Train Information**: Get detailed information on trains and schedules.
+- **Profile Management**: Check and modify your profile information.
+- **Booking History**: View your past bookings and booking details.
+- **Cancel Booking**: If needed, you can cancel your ticket directly from the user dashboard.
+
+### For Admins:
+- **Manage Trains**: Add, delete, or update train details in the system.
+- **Schedule Management**: Create, modify, or remove train schedules.
+- **Station Management**: Add or delete station details.
+- **Admin Access**: Add new administrators or remove existing ones.
+
 
 ## Contributing
 
