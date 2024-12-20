@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import useDebounce from '../customHooks/deBounceHook.jsx';
 import HighlightedText from '../Components/HighlightedText.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchTrainPage() {
     const [field, setField] = useState("");
@@ -11,6 +12,7 @@ export default function SearchTrainPage() {
     const [trainData, setTrainData] = useState(null)
     const [activeDays, setActiveDays] = useState([])
     const [loading, setLoading] = useState(true)
+    const navigate = useNavigate()
 
     const days = {
         "Sunday": "S",
@@ -126,40 +128,73 @@ export default function SearchTrainPage() {
     return (
         <div className="w-full h-screen flex flex-col items-center bg-orange-50">
             <ToastContainer style={{ width: "360px" }} />
-            <form onSubmit={handleForm} className="w-10/12 relative top-5 h-32 px-10 rounded-xl flex flex-col justify-between items-center bg-white shadow-md gap-y-4">
-                <h1 className="text-3xl font-medium text-orange-800 mt-4">Enter train no or name to search</h1>
-                <div className="w-full flex flex-row items-center justify-center mb-5">
-                    <div className="flex flex-row">
-                        <input
-                            id="ser"
-                            value={field}
-                            onChange={handleField}
-                            className="w-64 px-4 py-2.5 border border-gray-300 rounded-l-lg shadow-sm"
-                            type="text"
-                            placeholder="Enter Train name/number"
-                        />
-                        {trainSuggestions?.length > 0 && (
-                            <ul className="absolute w-64 max-h-48 overflow-y-auto mt-12 bg-white border border-gray-300 rounded-lg shadow-md">
-                                {trainSuggestions.map((suggestion, index) => (
-                                    <li
-                                        key={index}
-                                        onClick={() => handleSuggestionClick(suggestion)}
-                                        className="pl-2 pr-4 py-2 cursor-pointer hover:bg-gray-100"
-                                    >
-                                        <HighlightedText text={suggestion.trainName} highlight={field} />
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
+            <div className='w-full flex flex-col justify-center items-center '>
+                <form onSubmit={handleForm} className="w-10/12 relative top-5 px-10 py-6 rounded-xl flex flex-col justify-center items-center bg-white shadow-lg gap-y-6">
+                    {/* Heading */}
+                    <h1 className="text-3xl font-semibold text-orange-700 mb-4">
+                        Enter Train Number or Name to Search
+                    </h1>
+
+                    {/* Input Section */}
+                    <div className="w-full flex flex-row items-center justify-center relative">
+                        <div className="flex flex-row w-full max-w-lg relative">
+                            {/* Input Field */}
+                            <input
+                                id="ser"
+                                value={field}
+                                onChange={handleField}
+                                className="w-full px-4 py-3 border border-gray-300 rounded-l-lg shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                type="text"
+                                placeholder="Enter Train Name/Number"
+                            />
+
+                            {/* Suggestions Dropdown */}
+                            {trainSuggestions?.length > 0 && (
+                                <ul className="absolute left-0 w-full max-h-48 overflow-y-auto mt-12 bg-white border border-gray-300 rounded-lg shadow-md z-10">
+                                    {trainSuggestions.map((suggestion, index) => (
+                                        <li
+                                            key={index}
+                                            onClick={() => handleSuggestionClick(suggestion)}
+                                            className="px-4 py-2 cursor-pointer hover:bg-gray-100 text-sm text-gray-700"
+                                        >
+                                            <HighlightedText text={suggestion.trainName} highlight={field} />
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+
+                        {/* Button */}
+                        <Button
+                            type="submit"
+                            className="px-5 py-3 text-lg font-medium rounded-r-lg bg-orange-500 border border-orange-500 text-white hover:bg-orange-600 transition-all duration-300"
+                        >
+                            Check Status
+                        </Button>
                     </div>
-                    <Button
-                        type="submit"
-                        className="w-30 px-3 py-1 text-xl rounded-r-lg bg-orange-500 border border-orange-500 text-white hover:bg-orange-600"
+                </form>
+
+                {/* Navigation Buttons */}
+                <div className="w-full flex items-center justify-around px-20 py-10 gap-10">
+                    {/* Search Train Button */}
+                    <button
+                        onClick={() => navigate('/pnr-status')}
+                        className="w-1/3 bg-orange-400 hover:bg-white hover:text-orange-500 text-white transition-all duration-300 ease-in-out px-10 py-5 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex flex-row justify-center items-center gap-5"
                     >
-                        Check Status
-                    </Button>
+                        Check PNR Status
+                        <img src="photos/rightArraow.png" className="w-6 h-6" alt="arrow" />
+                    </button>
+
+                    {/* Book Ticket Button */}
+                    <button
+                        onClick={() => navigate('/book-ticket')}
+                        className="w-1/3 bg-orange-400 hover:bg-white hover:text-orange-500 text-white transition-all duration-300 ease-in-out px-10 py-5 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex flex-row justify-center items-center gap-5"
+                    >
+                        Book Ticket
+                        <img src="photos/rightArraow.png" className="w-6 h-6" alt="arrow" />
+                    </button>
                 </div>
-            </form>
+            </div>
 
             {loading ? (
                 <div className="w-full flex justify-center items-center mt-40">

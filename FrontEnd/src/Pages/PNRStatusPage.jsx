@@ -3,12 +3,14 @@ import { Button } from '../Components/index.js';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import useDebounce from '../customHooks/deBounceHook.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export default function PNRStatusPage() {
 
     const [pnrNo, setPnrNo] = useState("");
     const [pnrData, setPnrData] = useState(null);
     const [loadingData, setLoadingData] = useState(true);
+    const navigate = useNavigate()
 
     const id = useId()
 
@@ -94,17 +96,50 @@ export default function PNRStatusPage() {
     return (
         <div className='w-full h-screen flex flex-col items-center'>
             <ToastContainer />
-            <div className='w-full bg-orange-100 p-5 pb-16 flex flex-col items-center'>
-                <form onSubmit={handleForm} className='w-9/12 p-5 bg-white shadow-md rounded-lg flex flex-col items-center'>
-                    <h1 className='text-3xl font-medium mb-4'>PNR Status</h1>
-                    <div className='w-full flex items-center justify-center mb-4'>
-                        <input id='pnr' onChange={(e) => setPnrNo(e.target.value)} className='w-80 px-5 py-3 text-xl font-medium border border-black rounded-l-lg shadow-sm' type='text' value={pnrNo} placeholder='Enter 10 digit PNR number' />
-                        <Button type='submit' className='w-40 py-3 text-xl font-medium rounded-r-lg bg-orange-500 border-orange-500 border text-white hover:bg-orange-600'>
+            <div className='w-full bg-orange-100 p-5 pb-10 flex flex-col items-center'>
+                {/* PNR Status Form */}
+                <form onSubmit={handleForm} className='w-9/12 p-8 bg-white shadow-lg rounded-xl flex flex-col items-center'>
+                    <h1 className='text-4xl font-semibold mb-6 text-orange-600'>PNR Status</h1>
+                    <div className='w-full flex items-center justify-center mb-6'>
+                        <input
+                            id='pnr'
+                            onChange={(e) => setPnrNo(e.target.value)}
+                            className='w-80 px-5 py-3 text-lg font-medium border border-gray-300 rounded-l-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500'
+                            type='text'
+                            value={pnrNo}
+                            placeholder='Enter 10-digit PNR number'
+                        />
+                        <Button
+                            type='submit'
+                            className='w-40 py-3 text-lg font-medium rounded-r-lg bg-orange-500 text-white hover:bg-orange-600 transition-all duration-300 ease-in-out'
+                        >
                             Check Status
                         </Button>
                     </div>
                 </form>
+
+                {/* Navigation Buttons */}
+                <div className='w-full flex items-center justify-around px-20 py-10 gap-10'>
+                    {/* Search Train Button */}
+                    <button
+                        onClick={() => navigate('/search-train')}
+                        className='w-1/3 bg-orange-400 hover:bg-white hover:text-orange-500 text-white transition-all duration-300 ease-in-out px-10 py-5 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex flex-row justify-center items-center gap-5'
+                    >
+                        Search Train
+                        <img src='photos/rightArraow.png' className='w-6 h-6'></img>
+                    </button>
+
+                    {/* Book Ticket Button */}
+                    <button
+                        onClick={() => navigate('/book-ticket')}
+                        className='w-1/3 bg-orange-400 hover:bg-white hover:text-orange-500 text-white transition-all duration-300 ease-in-out px-10 py-5 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex flex-row justify-center items-center gap-5'
+                    >
+                        Book Ticket
+                        <img src='photos/rightArraow.png' className='w-6 h-6'></img>
+                    </button>
+                </div>
             </div>
+
 
             {loadingData ? (
                 <div className="w-full flex justify-center items-center mt-40">

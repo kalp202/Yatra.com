@@ -48,7 +48,7 @@ export default function BookingHistory() {
                 return;
             }
 
-            setBookingHistory(result.data)
+            setBookingHistory(result.data.reverse())
             notify(result.message, 'success')
 
 

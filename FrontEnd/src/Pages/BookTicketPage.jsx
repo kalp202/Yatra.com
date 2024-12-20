@@ -320,6 +320,22 @@ export default function BookTicketPage() {
                         Search Trains
                     </Button>
                 </form>
+
+                {/* Navigate button */}
+                <div>
+                    <div className='w-full flex items-center justify-around px-20 py-10 gap-10'>
+                        <button onClick={() => navigate('/search-train')} className='w-1/3 bg-orange-300 hover:bg-white hover:text-orange-400 transition-all duration-300 ease-in-out px-10 py-5 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex flex-row justify-center items-center gap-5'>
+                            Search Train
+                            <img src='photos/rightArraow.png' className='w-5 h-5'></img>
+                        </button>
+
+                        <button onClick={() => navigate('/pnr-status')} className='w-1/3 bg-orange-300 hover:bg-white hover:text-orange-400 transition-all duration-300 ease-in-out px-10 py-5 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex flex-row justify-center items-center gap-5'>
+                            Check PNR Status
+                            <img src='photos/rightArraow.png' className='w-5 h-5'></img>
+                        </button>
+                    </div>
+                </div>
+
             </div>
 
             {/* fetched train */}
