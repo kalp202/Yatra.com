@@ -1,14 +1,13 @@
 const asyncHandler = (fn) => async (req, res, next) => {
     try {
-        await fn(req, res, next)
+        await fn(req, res, next);
     } catch (error) {
-        res.status(error.code || 500).json(
-            {
-                success: false,
-                message: error.message
-            }
-        )
+        // Default error handling with HTTP 500 if no code is provided
+        res.status(error.statusCode || 500).json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        });
     }
-}
+};
 
-export default asyncHandler
+export default asyncHandler;

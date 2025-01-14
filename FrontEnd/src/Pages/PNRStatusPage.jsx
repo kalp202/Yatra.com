@@ -39,6 +39,8 @@ export default function PNRStatusPage() {
             const response = await fetch(`/api/v1/book-ticket/booking-details/c/${pnr}`, {
                 method: 'GET'
             });
+            console.log(response);
+
             const data = await response.json();
             // console.log(data);
 

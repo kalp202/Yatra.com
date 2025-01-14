@@ -51,37 +51,37 @@ export default function AdminInfo() {
                         {/* <!-- No of Trains --> */}
                         <div className="bg-orange-100 rounded-lg p-4 shadow-md">
                             <h2 className="text-xl font-semibold text-orange-600">Total Trains</h2>
-                            <p className="text-3xl font-bold text-orange-800">{details.noOfTrains.trains}</p>
+                            <p className="text-3xl font-bold text-orange-800">{details?.noOfTrains?.trains}</p>
                         </div>
 
                         {/* <!-- No of bookings --> */}
                         <div className="bg-orange-100 rounded-lg p-4 shadow-md">
                             <h2 className="text-xl font-semibold text-orange-600">Total Bookings For Today</h2>
-                            <p className="text-3xl font-bold text-orange-800">{details.noOfBookings[0]?.bookings || "-"}</p>
+                            <p className="text-3xl font-bold text-orange-800">{details?.noOfBookings[0]?.bookings || "-"}</p>
                         </div>
 
                         {/* <!-- Active Users --> */}
                         <div className="bg-orange-100 rounded-lg p-4 shadow-md">
                             <h2 className="text-xl font-semibold text-orange-600">Active Users</h2>
-                            <p className="text-3xl font-bold text-orange-800">{details.activeUser[0]?.activeUsers || "-"}</p>
+                            <p className="text-3xl font-bold text-orange-800">{details?.activeUser[0]?.activeUsers || "-"}</p>
                         </div>
 
                         {/* <!-- Monthly Revenue --> */}
                         <div className="bg-orange-100 rounded-lg p-4 shadow-md">
                             <h2 className="text-xl font-semibold text-orange-600">Daily Revenue</h2>
-                            <p className="text-3xl font-bold text-orange-800">{formatCurrency(details.dailyRevenue[0]?.dailyRevenue) || '-'}</p>
+                            <p className="text-3xl font-bold text-orange-800">{formatCurrency(details?.dailyRevenue[0]?.dailyRevenue) || '-'}</p>
                         </div>
 
                         {/* <!-- Monthly Revenue --> */}
                         <div className="bg-orange-100 rounded-lg p-4 shadow-md">
                             <h2 className="text-xl font-semibold text-orange-600">Monthly Revenue</h2>
-                            <p className="text-3xl font-bold text-orange-800">{formatCurrency(details.monthlyRevenue[0]?.monthlyRevenue) || "-"}</p>
+                            <p className="text-3xl font-bold text-orange-800">{formatCurrency(details?.monthlyRevenue[0]?.monthlyRevenue) || "-"}</p>
                         </div>
 
                         {/* <!-- Yearly Revenue --> */}
                         <div className="bg-orange-100 rounded-lg p-4 shadow-md">
                             <h2 className="text-xl font-semibold text-orange-600">Yearly Revenue</h2>
-                            <p className="text-3xl font-bold text-orange-800">{formatCurrency(details.yeralyRevenue[0]?.annualRevenue) || "-"}</p>
+                            <p className="text-3xl font-bold text-orange-800">{formatCurrency(details?.yeralyRevenue[0]?.annualRevenue) || "-"}</p>
                         </div>
 
                         {/* new users in last 30 days */}
@@ -97,7 +97,7 @@ export default function AdminInfo() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {details.newUsers.map((user, index) => (
+                                        {details?.newUsers.map((user, index) => (
                                             <tr key={user._id} className={`border-t ${index % 2 === 0 ? 'bg-orange-100' : 'bg-white'} hover:bg-orange-200 transition-colors`}>
                                                 <td className="py-3 px-4">{user?.username || "-"}</td>
                                                 <td className="py-3 px-4">{user?.email || "-"}</td>
