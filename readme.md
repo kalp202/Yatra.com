@@ -23,23 +23,23 @@ A comprehensive travel booking system inspired by Yatra.com, developed using the
 1. Clone the repository:
     ```bash
     git clone <repository-url>
-    cd yatra-travel-booking-system
+    cd Yatra
     ```
 
 2. Install server-side dependencies:
     ```bash
-    cd server
+    cd Backend
     npm install
     ```
 
 3. Install client-side dependencies:
     ```bash
-    cd ../client
+    cd ../Frontend
     npm install
     ```
 
 4. Configure environment variables:
-   - Create a `.env` file in the root directories of both `server` and `client`.
+   - Create a `.env` file in the root directories of both `Backend` and `Frontend`.
    - Add necessary environment variables (e.g., database URI, payment gateway keys).
 
 5. Run the development server:
@@ -64,14 +64,15 @@ A comprehensive travel booking system inspired by Yatra.com, developed using the
 - **Station Management**: Add or delete station details.
 - **Admin Access**: Add new administrators or remove existing ones.
 
+### Adding a New Admin:
+1. Navigate to the `Backend` folder, then go to `src/routes`.
+2. Open `admin.routes.js`.
+3. Remove `verifyAdmin` from the `create admin` route.
+4. Run the corresponding endpoint in Postman to create a new admin.
 
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
-
-<!-- ## License
-
-This project is licensed under the MIT License. -->
 
 ## Contact
 
